@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>实验三 使用Github管理Android项目 | 汪秋凌的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="一、实验目的1.掌握Android Studio中Git使用2.掌握2.Github管理项目二、实验任务1.在Android Studio中新建项目2.添加VCS中的Git支持3.发布项目到Github4.在Android Studio中进行修改代码、提交、新建分支、合并等操作5.推送项目到Github6.如有多人合作，处理pull request三、实验步骤与结果1.在Android Stud">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实验三 使用Github管理Android项目">
+<meta property="og:url" content="http://yoursite.com/2017/04/15/newblog-2/index.html">
+<meta property="og:site_name" content="汪秋凌的博客">
+<meta property="og:description" content="一、实验目的1.掌握Android Studio中Git使用2.掌握2.Github管理项目二、实验任务1.在Android Studio中新建项目2.添加VCS中的Git支持3.发布项目到Github4.在Android Studio中进行修改代码、提交、新建分支、合并等操作5.推送项目到Github6.如有多人合作，处理pull request三、实验步骤与结果1.在Android Stud">
+<meta property="og:image" content="http://i4.buimg.com/567571/5c52de2d02bb629a.png">
+<meta property="og:image" content="http://i1.piimg.com/567571/f23693c96090a2f5.png">
+<meta property="og:image" content="http://i1.piimg.com/567571/663b0b7ab2845525.png">
+<meta property="og:image" content="http://i1.piimg.com/567571/ef1e2c2256132d81.png">
+<meta property="og:image" content="http://i1.piimg.com/567571/eb0c75c594c60229.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/d0530d51d8222620.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/43279009df8b74c9.png">
+<meta property="og:image" content="http://i1.piimg.com/567571/a77922f2959f327a.png">
+<meta property="og:image" content="http://i4.buimg.com/567571/90e90f5eb8f0f943.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/98765d67f9623350.png">
+<meta property="og:image" content="http://i4.buimg.com/567571/ed0dd90f0fd4ded8.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/405324ca757f20f9.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/279e9ed37d7bcfa7.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/6c758c6a50afbfc4.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/1147f312c0a264f1.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/cc23363b4d701d6a.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/4a8bed6a6134c71e.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/a3255b3eb7f3819d.png">
+<meta property="og:image" content="http://i4.buimg.com/567571/346cd015ed6a5251.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/37c4e6c138e23999.png">
+<meta property="og:image" content="http://i4.buimg.com/567571/98c1dfa4170e9263.png">
+<meta property="og:image" content="http://i2.muimg.com/567571/349402520982b82b.png">
+<meta property="og:updated_time" content="2017-04-15T13:20:47.341Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="实验三 使用Github管理Android项目">
+<meta name="twitter:description" content="一、实验目的1.掌握Android Studio中Git使用2.掌握2.Github管理项目二、实验任务1.在Android Studio中新建项目2.添加VCS中的Git支持3.发布项目到Github4.在Android Studio中进行修改代码、提交、新建分支、合并等操作5.推送项目到Github6.如有多人合作，处理pull request三、实验步骤与结果1.在Android Stud">
+<meta name="twitter:image" content="http://i4.buimg.com/567571/5c52de2d02bb629a.png">
+  
+    <link rel="alternate" href="/atom.xml" title="汪秋凌的博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">汪秋凌的博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">自建博客步骤</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-newblog-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/15/newblog-2/" class="article-date">
+  <time datetime="2017-04-15T12:12:45.000Z" itemprop="datePublished">2017-04-15</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      实验三 使用Github管理Android项目
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="" alt="imag2"></p>
+<h1 id="一、实验目的"><a href="#一、实验目的" class="headerlink" title="一、实验目的"></a>一、实验目的</h1><h2 id="1-掌握Android-Studio中Git使用"><a href="#1-掌握Android-Studio中Git使用" class="headerlink" title="1.掌握Android Studio中Git使用"></a>1.掌握Android Studio中Git使用</h2><h2 id="2-掌握2-Github管理项目"><a href="#2-掌握2-Github管理项目" class="headerlink" title="2.掌握2.Github管理项目"></a>2.掌握2.Github管理项目</h2><h1 id="二、实验任务"><a href="#二、实验任务" class="headerlink" title="二、实验任务"></a>二、实验任务</h1><h2 id="1-在Android-Studio中新建项目"><a href="#1-在Android-Studio中新建项目" class="headerlink" title="1.在Android Studio中新建项目"></a>1.在Android Studio中新建项目</h2><h2 id="2-添加VCS中的Git支持"><a href="#2-添加VCS中的Git支持" class="headerlink" title="2.添加VCS中的Git支持"></a>2.添加VCS中的Git支持</h2><h2 id="3-发布项目到Github"><a href="#3-发布项目到Github" class="headerlink" title="3.发布项目到Github"></a>3.发布项目到Github</h2><h2 id="4-在Android-Studio中进行修改代码、提交、新建分支、合并等操作"><a href="#4-在Android-Studio中进行修改代码、提交、新建分支、合并等操作" class="headerlink" title="4.在Android Studio中进行修改代码、提交、新建分支、合并等操作"></a>4.在Android Studio中进行修改代码、提交、新建分支、合并等操作</h2><h2 id="5-推送项目到Github"><a href="#5-推送项目到Github" class="headerlink" title="5.推送项目到Github"></a>5.推送项目到Github</h2><h2 id="6-如有多人合作，处理pull-request"><a href="#6-如有多人合作，处理pull-request" class="headerlink" title="6.如有多人合作，处理pull request"></a>6.如有多人合作，处理pull request</h2><h1 id="三、实验步骤与结果"><a href="#三、实验步骤与结果" class="headerlink" title="三、实验步骤与结果"></a>三、实验步骤与结果</h1><h2 id="1-在Android-Studio中新建项目-1"><a href="#1-在Android-Studio中新建项目-1" class="headerlink" title="1.在Android Studio中新建项目"></a>1.在Android Studio中新建项目</h2><p>打开Android Studio,选择菜单项File-&gt;New Project，新建一个名为NerdLaunch的Android Studio项目，目标设备为Phone and Tablet，新建名为NerdLaunchActivity的空Activity。</p>
+<h2 id="2-添加VCS中的Git支持-1"><a href="#2-添加VCS中的Git支持-1" class="headerlink" title="2.添加VCS中的Git支持"></a>2.添加VCS中的Git支持</h2><p>点击菜单栏的VCS-&gt;VCS Operations Popup，选择Create Git Repository。<br><img src="http://i4.buimg.com/567571/5c52de2d02bb629a.png" alt="imag1"><br><img src="http://i1.piimg.com/567571/f23693c96090a2f5.png" alt="imag2"></p>
+<h2 id="3-发布项目到Github-1"><a href="#3-发布项目到Github-1" class="headerlink" title="3.发布项目到Github"></a>3.发布项目到Github</h2><h3 id="1）-安装好git后启动Androidstudio，打开如下路径File-gt-Settings-gt-Version-Control-展开-gt-git在Path-to-Git-executable后面的输入框输入你安装的git路径，点击test按钮如果出现-Git-executed-successfully-对话框说明配置成功，同时对话框会显示你安装的git版本号。"><a href="#1）-安装好git后启动Androidstudio，打开如下路径File-gt-Settings-gt-Version-Control-展开-gt-git在Path-to-Git-executable后面的输入框输入你安装的git路径，点击test按钮如果出现-Git-executed-successfully-对话框说明配置成功，同时对话框会显示你安装的git版本号。" class="headerlink" title="1）.安装好git后启动Androidstudio，打开如下路径File-&gt;Settings-&gt;Version Control(展开)-&gt;git在Path to Git executable后面的输入框输入你安装的git路径，点击test按钮如果出现 Git executed successfully 对话框说明配置成功，同时对话框会显示你安装的git版本号。"></a>1）.安装好git后启动Androidstudio，打开如下路径File-&gt;Settings-&gt;Version Control(展开)-&gt;git在Path to Git executable后面的输入框输入你安装的git路径，点击test按钮如果出现 Git executed successfully 对话框说明配置成功，同时对话框会显示你安装的git版本号。</h3><p><img src="http://i1.piimg.com/567571/663b0b7ab2845525.png" alt="imag3"><br><img src="http://i1.piimg.com/567571/ef1e2c2256132d81.png" alt="imag4"></p>
+<h3 id="2-配置github登录信息：File-gt-setting-gt-Github，Login填账号如我的：QiulingWang1995，Password填登录密码。填完之后点击test按钮，如果出现如下对话框说明配置成功"><a href="#2-配置github登录信息：File-gt-setting-gt-Github，Login填账号如我的：QiulingWang1995，Password填登录密码。填完之后点击test按钮，如果出现如下对话框说明配置成功" class="headerlink" title="2).配置github登录信息：File-&gt;setting-&gt;Github，Login填账号如我的：QiulingWang1995，Password填登录密码。填完之后点击test按钮，如果出现如下对话框说明配置成功"></a>2).配置github登录信息：File-&gt;setting-&gt;Github，Login填账号如我的：QiulingWang1995，Password填登录密码。填完之后点击test按钮，如果出现如下对话框说明配置成功</h3><p><img src="http://i1.piimg.com/567571/eb0c75c594c60229.png" alt="imag5"><br><img src="http://i2.muimg.com/567571/d0530d51d8222620.png" alt="imag6"></p>
+<h3 id="3-接下来点击Android-studio菜单中的“VCS”的选项，弹出的下拉的菜单中进行选择“import-into-version-control”的选项，弹出的下一级的菜单中，进行选中“share-project-on-github”的选项，如果在github仓库无上传过当前项目，需要进行创建一个github的昵称，new-repository-name的昵称，然后点击“share”，在commit-message提交备注的信息，或是进行更新的项目的信息，点击“ok”。这样Android-studio的左侧底部的位置中看到上传的成功的提示的信息。登录GitHub可查看到新的Repository-NerdLaunch已经生成。"><a href="#3-接下来点击Android-studio菜单中的“VCS”的选项，弹出的下拉的菜单中进行选择“import-into-version-control”的选项，弹出的下一级的菜单中，进行选中“share-project-on-github”的选项，如果在github仓库无上传过当前项目，需要进行创建一个github的昵称，new-repository-name的昵称，然后点击“share”，在commit-message提交备注的信息，或是进行更新的项目的信息，点击“ok”。这样Android-studio的左侧底部的位置中看到上传的成功的提示的信息。登录GitHub可查看到新的Repository-NerdLaunch已经生成。" class="headerlink" title="3).接下来点击Android studio菜单中的“VCS”的选项，弹出的下拉的菜单中进行选择“import into version control”的选项，弹出的下一级的菜单中，进行选中“share project on github”的选项，如果在github仓库无上传过当前项目，需要进行创建一个github的昵称，new repository name的昵称，然后点击“share”，在commit message提交备注的信息，或是进行更新的项目的信息，点击“ok”。这样Android studio的左侧底部的位置中看到上传的成功的提示的信息。登录GitHub可查看到新的Repository NerdLaunch已经生成。"></a>3).接下来点击Android studio菜单中的“VCS”的选项，弹出的下拉的菜单中进行选择“import into version control”的选项，弹出的下一级的菜单中，进行选中“share project on github”的选项，如果在github仓库无上传过当前项目，需要进行创建一个github的昵称，new repository name的昵称，然后点击“share”，在commit message提交备注的信息，或是进行更新的项目的信息，点击“ok”。这样Android studio的左侧底部的位置中看到上传的成功的提示的信息。登录GitHub可查看到新的Repository NerdLaunch已经生成。</h3><p><img src="http://i2.muimg.com/567571/43279009df8b74c9.png" alt="imag7"><br><img src="http://i1.piimg.com/567571/a77922f2959f327a.png" alt="imag8"><br><img src="http://i4.buimg.com/567571/90e90f5eb8f0f943.png" alt="imag9"></p>
+<h2 id="4-在Android-Studio中进行修改代码、提交、新建分支、合并等操作-1"><a href="#4-在Android-Studio中进行修改代码、提交、新建分支、合并等操作-1" class="headerlink" title="4.在Android Studio中进行修改代码、提交、新建分支、合并等操作"></a>4.在Android Studio中进行修改代码、提交、新建分支、合并等操作</h2><h3 id="1）-修改代码并提交：修改代码后右击选择Git-gt-Commit-File进行提交。"><a href="#1）-修改代码并提交：修改代码后右击选择Git-gt-Commit-File进行提交。" class="headerlink" title="1）.修改代码并提交：修改代码后右击选择Git-&gt;Commit File进行提交。"></a>1）.修改代码并提交：修改代码后右击选择Git-&gt;Commit File进行提交。</h3><p><img src="http://i2.muimg.com/567571/98765d67f9623350.png" alt="imag10"><br><img src="" alt="imag11"></p>
+<h3 id="2-新建分支：右下角点击master，选择New-Branch，-或者点击右键，选择Git—-gt-Repository—-gt-Branches-新建本地分支dev-test，但远程仓库还没有dev-test分支。接下来把新建的dev-test本地分支推送到远程仓库：右击选择Git-gt-Repository-gt-Push-成功后远程仓库有了dev-test分支。"><a href="#2-新建分支：右下角点击master，选择New-Branch，-或者点击右键，选择Git—-gt-Repository—-gt-Branches-新建本地分支dev-test，但远程仓库还没有dev-test分支。接下来把新建的dev-test本地分支推送到远程仓库：右击选择Git-gt-Repository-gt-Push-成功后远程仓库有了dev-test分支。" class="headerlink" title="2).新建分支：右下角点击master，选择New Branch，(或者点击右键，选择Git—&gt;Repository—&gt;Branches)新建本地分支dev_test，但远程仓库还没有dev_test分支。接下来把新建的dev_test本地分支推送到远程仓库：右击选择Git-&gt;Repository-&gt;Push,成功后远程仓库有了dev_test分支。"></a>2).新建分支：右下角点击master，选择New Branch，(或者点击右键，选择Git—&gt;Repository—&gt;Branches)新建本地分支dev_test，但远程仓库还没有dev_test分支。接下来把新建的dev_test本地分支推送到远程仓库：右击选择Git-&gt;Repository-&gt;Push,成功后远程仓库有了dev_test分支。</h3><p><img src="http://i4.buimg.com/567571/ed0dd90f0fd4ded8.png" alt="imag12"><br><img src="http://i2.muimg.com/567571/405324ca757f20f9.png" alt="imag13"></p>
+<h3 id="3-提交分支修改：对dev2-test分支修改之后，想要提交修改，在自己的分支上做如下操作：Git-gt-Commit-Directory-gt-commit-and-Push-gt-Push。"><a href="#3-提交分支修改：对dev2-test分支修改之后，想要提交修改，在自己的分支上做如下操作：Git-gt-Commit-Directory-gt-commit-and-Push-gt-Push。" class="headerlink" title="3).提交分支修改：对dev2_test分支修改之后，想要提交修改，在自己的分支上做如下操作：Git-&gt;Commit Directory&gt;commit and Push-&gt;Push。"></a>3).提交分支修改：对dev2_test分支修改之后，想要提交修改，在自己的分支上做如下操作：Git-&gt;Commit Directory&gt;commit and Push-&gt;Push。</h3><p><img src="http://i2.muimg.com/567571/279e9ed37d7bcfa7.png" alt="imag14"></p>
+<h3 id="4-分支的切换：从当前dev2-test分支切换到dev-test分支。如右图点击右下角dev2-test分支选择dev-test分支，点击checkout则切换成功。"><a href="#4-分支的切换：从当前dev2-test分支切换到dev-test分支。如右图点击右下角dev2-test分支选择dev-test分支，点击checkout则切换成功。" class="headerlink" title="4).分支的切换：从当前dev2_test分支切换到dev_test分支。如右图点击右下角dev2_test分支选择dev_test分支，点击checkout则切换成功。"></a>4).分支的切换：从当前dev2_test分支切换到dev_test分支。如右图点击右下角dev2_test分支选择dev_test分支，点击checkout则切换成功。</h3><p><img src="http://i2.muimg.com/567571/6c758c6a50afbfc4.png" alt="imag15"></p>
+<h3 id="5-分支的拉取：Git-gt-Repository-gt-Pull-gt-选择dev2-test分支-gt-Pull。"><a href="#5-分支的拉取：Git-gt-Repository-gt-Pull-gt-选择dev2-test分支-gt-Pull。" class="headerlink" title="5).分支的拉取：Git-&gt;Repository-&gt;Pull-&gt;选择dev2_test分支-&gt;Pull。"></a>5).分支的拉取：Git-&gt;Repository-&gt;Pull-&gt;选择dev2_test分支-&gt;Pull。</h3><p><img src="http://i2.muimg.com/567571/1147f312c0a264f1.png" alt="imag16"><br><img src="http://i2.muimg.com/567571/cc23363b4d701d6a.png" alt="imag17"><br><img src="http://i2.muimg.com/567571/4a8bed6a6134c71e.png" alt="imag18"></p>
+<h3 id="6-分支的合并：Git-gt-Repository-gt-Branches，点击某一个分支。就可以选择切换到选择的分支，创建并切换到新的分支，和选择的分支做对比，和选择的分支合并，删除选择的分支操作。"><a href="#6-分支的合并：Git-gt-Repository-gt-Branches，点击某一个分支。就可以选择切换到选择的分支，创建并切换到新的分支，和选择的分支做对比，和选择的分支合并，删除选择的分支操作。" class="headerlink" title="6).分支的合并：Git-&gt;Repository-&gt;Branches，点击某一个分支。就可以选择切换到选择的分支，创建并切换到新的分支，和选择的分支做对比，和选择的分支合并，删除选择的分支操作。"></a>6).分支的合并：Git-&gt;Repository-&gt;Branches，点击某一个分支。就可以选择切换到选择的分支，创建并切换到新的分支，和选择的分支做对比，和选择的分支合并，删除选择的分支操作。</h3><p><img src="http://i2.muimg.com/567571/a3255b3eb7f3819d.png" alt="imag19"><br><img src="http://i4.buimg.com/567571/346cd015ed6a5251.png" alt="imag20"></p>
+<h2 id="5-推送项目到Github-1"><a href="#5-推送项目到Github-1" class="headerlink" title="5.推送项目到Github"></a>5.推送项目到Github</h2><h3 id="接下来让我们创建个新文件"><a href="#接下来让我们创建个新文件" class="headerlink" title="接下来让我们创建个新文件"></a>接下来让我们创建个新文件</h3><p><img src="http://i2.muimg.com/567571/37c4e6c138e23999.png" alt="imag21"></p>
+<h3 id="创建后-AndroidStudio会弹出下面对话框-这时候要点击Yes"><a href="#创建后-AndroidStudio会弹出下面对话框-这时候要点击Yes" class="headerlink" title="创建后 AndroidStudio会弹出下面对话框 这时候要点击Yes"></a>创建后 AndroidStudio会弹出下面对话框 这时候要点击Yes</h3><p><img src="http://i4.buimg.com/567571/98c1dfa4170e9263.png" alt="imag22"></p>
+<h3 id="再修改一下NerdLaunchActivity-java-，作为测试用。点击主面板上的-Commit-Changes-按钮并填写提交信息，点击commit-，继续点击commit。然后Git-gt-Repository-gt-Push，将项目push到-Github。网页端显示已经上传到Github上了。"><a href="#再修改一下NerdLaunchActivity-java-，作为测试用。点击主面板上的-Commit-Changes-按钮并填写提交信息，点击commit-，继续点击commit。然后Git-gt-Repository-gt-Push，将项目push到-Github。网页端显示已经上传到Github上了。" class="headerlink" title="再修改一下NerdLaunchActivity.java ，作为测试用。点击主面板上的 Commit Changes 按钮并填写提交信息，点击commit ，继续点击commit。然后Git-&gt;Repository-&gt;Push，将项目push到 Github。网页端显示已经上传到Github上了。"></a>再修改一下NerdLaunchActivity.java ，作为测试用。点击主面板上的 Commit Changes 按钮并填写提交信息，点击commit ，继续点击commit。然后Git-&gt;Repository-&gt;Push，将项目push到 Github。网页端显示已经上传到Github上了。</h3><p><img src="http://i2.muimg.com/567571/349402520982b82b.png" alt="imag23"></p>
+<h1 id="四、实验小结"><a href="#四、实验小结" class="headerlink" title="四、实验小结"></a>四、实验小结</h1><p>通过本次使用Github管理Android项目的实验，掌握了Android Studio中Git使用和Github管理项目，又学习到新的方法管理Github项目。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/15/newblog-2/" data-id="cj1jak2dj0000j4da035vggoz" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/29/newblog-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">实验2  git使用</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/03/">March 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/04/15/newblog-2/">实验三 使用Github管理Android项目</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/29/newblog-1/">实验2  git使用</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/14/newblog/">在Github上用Markdown创建技术博客</a>
+          </li>
+        
+          <li>
+            <a href="/2017/03/14/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 汪秋凌<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
